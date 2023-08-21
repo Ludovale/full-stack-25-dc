@@ -4,6 +4,8 @@
 
 - git config --global user.email "usuario@email.com" -> configurar o email do usuario;
 
+- git clone adicionarHTTPS
+
 - git add . -> Adiciona todas as alterações realizadas na sua pasta, como novos arquivos, pastas imagens, etc;
 
 - git commit -m "Comentário" -> Criar o commit com um comentário explicativo;
