@@ -14,9 +14,9 @@
 
 - git checkout -b"nome" -> cria uma nova brench
 
--git branch -> lista todas as brenchs existentes (verde é a selecionada)
+- git branch -> lista todas as brenchs existentes (verde é a selecionda)
 
-- git checkout 
+- git checkout "nome" -> muda de brench
 
 -----
 (terminal powershell)
