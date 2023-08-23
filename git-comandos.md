@@ -12,6 +12,12 @@
 
 - git push -> enviar o Commit e as atualizações para o repositório no Github.
 
+- git checkout -b"nome" -> cria uma nova brench
+
+-git branch -> lista todas as brenchs existentes (verde é a selecionada)
+
+- git checkout 
+
 -----
 (terminal powershell)
 
