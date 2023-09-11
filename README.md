@@ -1,3 +1,3 @@
-## full-stack-25-dc
+## Tarefa 1
 
-### Luciana do Vale
+### Landing Page do site fictício "Drivin". Feito como primeira tarefa do curso de fullstack do Digital College.
