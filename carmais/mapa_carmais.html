@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="my-10  px-16 h-screen flex justify-center gap-10">
+        <div class="flex flex-col w-1/4 gap-8">
+        <div>
+            <p class="text-justify">
+                Preencha os filtros abaixo e encontre uma de nossas lojas mais próxima
+                de você.
+            </p>
+        </div>
+        <form class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2">
+            <label class="font-bold" for="">Marca de interesse</label>
+            <select class="px-2 py-3 bg-[#DDDDDD] rounded-sm">
+                <option value="">Escolha a marca</option>
+
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-bold" for="">Estado</label>
+            <select disabled class="px-2 py-3 bg-[#DDDDDD] rounded-sm cursor-not-allowed">
+                <option value="">Escolha o estado</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-bold" for="">Cidade</label>
+            <select disabled class="px-2 py-3 bg-[#DDDDDD] rounded-sm cursor-not-allowed">
+                <option value="">Escolha a cidade</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-bold" for="">Loja</label>
+            <select disabled class="px-2 py-3 bg-[#DDDDDD] rounded-sm cursor-not-allowed">
+                <option value="">Escolha a loja</option>
+            </select>
+            <button class=" font-bold text-white m-8 px-2 py-3 bg-[#787878] rounded-sm cursor-not-allowed">Buscar</button>
+          </div>
+        </form>
+    </div>
+        <div class="w-3/4 rounded-xl overflow-hidden">
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.236509277805!2d-38.534405384981206!3d-3.758619997265528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74925e4f67c17%3A0x90b3d24d57169f53!2sConcession%C3%A1ria+Fiat+C.D.A.!5e0!3m2!1spt-BR!2sbr!4v1474731846393"
+          ></iframe>
+        </div>
+    </section>
+  </body>
+</html>
