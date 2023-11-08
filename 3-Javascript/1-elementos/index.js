@@ -62,10 +62,19 @@ const paragrafos = container.getElementsByTagName ("p");
 
 console.log(paragrafos);
 
+//--------------------------inicio aula 2
+
+const paragrafoss = document.getElementsByTagName("p")
+const paragrafo = document.querySelector("p") //---> seleciona apenas um, nesse caso seria o primeiro p apenas
+const paragrafosAll = document.querySelectorAll("p") //---> seleciona todos os ids, tags com o nome, dpende do que é colocado.
 
 
+console.log (paragrafoss);
+console.log (paragrafo);
+console.log (paragrafosAll);
 
 
+//HTML COLLECTION E NODELIST: html collection tem alguns tipos de metodos diferentes do que o nodelist, trazendo informações html.
 
 
 

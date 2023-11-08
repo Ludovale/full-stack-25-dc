@@ -1,0 +1,25 @@
+.input-field {
+    display: flex;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.bg-red{
+    background-color: red;
+}
+.bg-blue{
+    background-color: blue;
+}
+.bg-yellow{
+    background-color: yellow;
+}
