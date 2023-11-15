@@ -55,12 +55,12 @@
 // ------------------ONKEYDOWN
 //bootstrap adicionado para essa parte
 
-function verificarTecla(event){
-    let alteracao = document.getElementById("meuBotaoEstilizado");
+// function verificarTecla(event){
+//     let alteracao = document.getElementById("meuBotaoEstilizado");
 
-    if(event.key === 'Enter'){
-        alert("Você apertou enter e modificou algo na tela"); //RECONHECEU O ENTER E DEU UM ALERT
-        alteracao.classList.add("btn", "btn-sucess"); //ADIÇÃO DE CLASSES DO BOOTSTRAP NO BOTAO
-    }
-}
+//     if(event.key === 'Enter'){
+//         alert("Você apertou enter e modificou algo na tela"); //RECONHECEU O ENTER E DEU UM ALERT
+//         alteracao.classList.add("btn", "btn-sucess"); //ADIÇÃO DE CLASSES DO BOOTSTRAP NO BOTAO
+//     }
+// }
 
