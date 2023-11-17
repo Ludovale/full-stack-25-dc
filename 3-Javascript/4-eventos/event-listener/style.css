@@ -11,13 +11,15 @@
 }
 
 .modal-content {
-    width: 180px;
-    height: 200px;
+    width: 200px;
+    height: 350px;
     background-color: white;
     border-radius: 6px;
     display: flex;
     justify-content: center;
-    gap: 18px;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
     position: relative;
 
 }
@@ -27,6 +29,19 @@
     top: 5px;
     right: 10px;
     cursor: pointer;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.nome-total {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
 }
 
 .hidden {
