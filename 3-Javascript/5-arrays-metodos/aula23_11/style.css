@@ -1,0 +1,21 @@
+.list-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btns-action {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.button-edit {
+    background-color: #2e04ff;
+    color: white;
+}
+
+.button-delete {
+    background-color: red;
+    color: white;
+}
