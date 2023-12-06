@@ -14,6 +14,8 @@ const inputEditName = document.getElementById("editName");
 const inputEditEmail = document.getElementById("editEmail");
 const inputEditPhone = document.getElementById("editPhone");
 const btnEdit = document.getElementById("btnEdit");
+const inputFilter = document.getElementById("filter");
+const btnSearch = document.getElementById("search");
 
 
 function handleDelete(id) {
@@ -29,30 +31,45 @@ function handleEdit(id) {
 }
 
 function confirmEdit() {
-if (actualId !== ""){ //sempre o numero de convidados for maior que 0 (ou seja, tenha mais de 1) e que o valor do id não for nulo (definido na propria funçao) ;
-nomes[actualId].name = inputEditName.value;
-nomes[actualId].email = inputEditEmail.value;
-nomes[actualId].phone = inputEditPhone.value;
-handleList();
-actualId = "";
-inputEditName.value = "";
-inputEditEmail.value = "";
-inputEditPhone.value = "";
-}}
+    if (actualId !== "") { //sempre o numero de convidados for maior que 0 (ou seja, tenha mais de 1) e que o valor do id não for nulo (definido na propria funçao) ;
+        nomes[actualId].name = inputEditName.value;
+        nomes[actualId].email = inputEditEmail.value;
+        nomes[actualId].phone = inputEditPhone.value;
+        handleList();
+        actualId = "";
+        inputEditName.value = "";
+        inputEditEmail.value = "";
+        inputEditPhone.value = "";
+    }
+}
 
 function handleList() {
     lista.innerHTML = "";
-    for (const index in nomes) {
+    // for (const index in nomes) {
+    //     lista.innerHTML += `<li 
+    //     class="list-item">
+    //      ${nomes[index].name}, ${nomes[index].email}, ${nomes[index].phone}
+    //     <div class="btns-action">
+    //     <button class="button-edit" onclick="handleEdit(${index})">Editar</button>
+    //     <button class="button-delete" onclick="handleDelete(${index})">Deletar</button>
+    //     </div> </li>`; //UM item da lista é adicionado, mais os DOIS botoes de EDITAR e DELETAR;
+    // }
+    nomes.map((nome, index) => (
         lista.innerHTML += `<li 
-        class="list-item">
-         ${nomes[index].name}, ${nomes[index].email}, ${nomes[index].phone}
-        <div class="btns-action">
-        <button class="button-edit" onclick="handleEdit(${index})">Editar</button>
-        <button class="button-delete" onclick="handleDelete(${index})">Deletar</button>
-        </div> </li>`; //UM item da lista é adicionado, mais os DOIS botoes de EDITAR e DELETAR;
-    }
+    class="list-item">
+    ${nome.name} - ${nome.email} - ${nome.phone}
+    <div class="btns-action">
+        <button class="button-edit" onclick="handleEdit(${index})">
+            Editar
+        </button>
+        <button class="button-delete" onclick="handleDelete(${index})">
+            Deletar
+        </button>
+    </div> </li>`
+    ));
+
     console.log(nomes);
-    }
+}
 
 function handleCreateUser() {
     nomes.push({
@@ -69,27 +86,36 @@ function handleCreateUser() {
 botao.addEventListener("click", () => {
     handleCreateUser();
     handleList();
+    //FOR OF - RECEBE VALOR - NO CASO, O NOME
+    /*
+    for (const nome of convidados) {
+        lista.innerHTML += `<li onclick="alert('${nome}')"> ${nome} </li>`;
+    }
+     console.log(convidados);
+    */
+
+    //FOR IN - RECEBE INDEX - A POSIÇÃO
+    /*
+    for (const index in convidados) {
+        lista.innerHTML += `<li onclick="alert('${index}')"> ${convidados[index]} </li>`;
+    }
+    console.log(convidados);
+    })
+    */
+    //})
+    //-----------------------------------------------------------------------
+})
+
+
+function handleFilterNames() {
+    const filteredNames = nomes.filter((value) => {
+        const name = value.name.toLowerCase();
+        const filteredWord = inputFilter.value.toLowerCase();
+        return name.includes(filteredWord); //o value é cada elemento do array que vai ser filtrado.
+    });
+    console.log(filteredNames);
+}
+
+btnSearch.addEventListener("click", handleFilterNames); //evento para buscar o usuario usando o FILTER.
 
 btnEdit.addEventListener("click", confirmEdit);
-
-//FOR OF - RECEBE VALOR - NO CASO, O NOME
-
-/*
-for (const nome of convidados) {
-    lista.innerHTML += `<li onclick="alert('${nome}')"> ${nome} </li>`;
-}
- console.log(convidados);
-*/
-
-//FOR IN - RECEBE INDEX - A POSIÇÃO
-
-/*
-for (const index in convidados) {
-    lista.innerHTML += `<li onclick="alert('${index}')"> ${convidados[index]} </li>`;
-}
-console.log(convidados);
-})
-*/
-//})
-//-----------------------------------------------------------------------
-
