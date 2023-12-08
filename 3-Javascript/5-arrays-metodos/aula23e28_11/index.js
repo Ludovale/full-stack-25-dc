@@ -20,7 +20,7 @@ const btnSearch = document.getElementById("search");
 
 function handleDelete(id) {
     nomes.splice(id, 1);
-    handleList();
+    handleList(nomes);
 }
 
 function handleEdit(id) {
@@ -35,7 +35,7 @@ function confirmEdit() {
         nomes[actualId].name = inputEditName.value;
         nomes[actualId].email = inputEditEmail.value;
         nomes[actualId].phone = inputEditPhone.value;
-        handleList();
+        handleList(nomes);
         actualId = "";
         inputEditName.value = "";
         inputEditEmail.value = "";
@@ -43,7 +43,7 @@ function confirmEdit() {
     }
 }
 
-function handleList() {
+function handleList(array) {
     lista.innerHTML = "";
     // for (const index in nomes) {
     //     lista.innerHTML += `<li 
@@ -54,7 +54,7 @@ function handleList() {
     //     <button class="button-delete" onclick="handleDelete(${index})">Deletar</button>
     //     </div> </li>`; //UM item da lista é adicionado, mais os DOIS botoes de EDITAR e DELETAR;
     // }
-    nomes.map((nome, index) => (
+    array.map((nome, index) => (
         lista.innerHTML += `<li 
     class="list-item">
     ${nome.name} - ${nome.email} - ${nome.phone}
@@ -83,9 +83,33 @@ function handleCreateUser() {
     inputPhone.value = "";
 }
 
+function handleFilterNames() {
+    // FILTRAR OS NOMES USANDO OS FILTERS:
+    // const filteredNames = nomes.filter((value) => {
+    //     const name = value.name.toLowerCase();
+    //     const filteredWord = inputFilter.value.toLowerCase();
+    //     return name.includes(filteredWord); //o value é cada elemento do array que vai ser filtrado.
+    // });
+
+    const filteredNames = nomes.filter((nome) => {
+        const name = nome.name.toLowerCase();
+        const filteredWord = inputFilter.value.toLowerCase();
+        return name === filteredWord;
+        
+    })
+    return filteredNames;
+}
+
+function HandleListFilteredNames(){
+    handleList(handleFilterNames());
+}
+
+
+////////////////////////////////////////////////event listeners:
+
 botao.addEventListener("click", () => {
     handleCreateUser();
-    handleList();
+    handleList(nomes);
     //FOR OF - RECEBE VALOR - NO CASO, O NOME
     /*
     for (const nome of convidados) {
@@ -106,16 +130,6 @@ botao.addEventListener("click", () => {
     //-----------------------------------------------------------------------
 })
 
-
-function handleFilterNames() {
-    const filteredNames = nomes.filter((value) => {
-        const name = value.name.toLowerCase();
-        const filteredWord = inputFilter.value.toLowerCase();
-        return name.includes(filteredWord); //o value é cada elemento do array que vai ser filtrado.
-    });
-    console.log(filteredNames);
-}
-
-btnSearch.addEventListener("click", handleFilterNames); //evento para buscar o usuario usando o FILTER.
+btnSearch.addEventListener("click", HandleListFilteredNames); //evento para buscar o usuario usando o FILTER.
 
 btnEdit.addEventListener("click", confirmEdit);
