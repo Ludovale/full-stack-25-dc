@@ -48,3 +48,94 @@ return prev + current;
 //nesse caso, o reduce seria um loop que faria primeiro 0 +2, depois 2 + 3, etc. sempre atualizando o valor anterior (previous).
 //originalmente ele retorna só um valor, mas ele pode retornar um array se o valor iniciar for um array e se adicionar um push dentro da formula do reduce.
 console.log(somaNumeros);
+const valorInicial = 0;
+const soma = numeros.reduce((prev, current) => {
+    return prev + current;
+}, valorInicial);
+//é importante ter o return, pois ele envia a informação da resposta pro proximo looping
+console.log(soma);
+
+const vendas = [
+    {preco: 1000,
+    lja: 'loja 01'}
+, {preco: 2000,
+    lja: 'loja 02'},
+
+    {preco: 3000,
+    lja: 'loja 03'}
+]
+
+const somaVendas = vendas.reduce((prev, current) => {
+    console.log (prev + current.preco); //vai dar: 1000, 3000 e 6000
+    return prev + current.preco;
+}, 0);
+
+//diferença entre map e reduce -> reduce vai reduzir o array (criando um novo) em um valor só.
+console.log(somaVendas); //vai dar 6000;
+
+
+/////////////////////////SORT
+//-> ORDENAÇÃO DO ARRAY, MODIFICA O ORIGINAL!!
+
+const numerosOrdenados = numeros.sort();
+
+console.log(numerosOrdenados);
+
+//2, 3, 54, 6, 19, 10, 14
+function compararDoisNumeros(num1, num2) {
+    if(num1>num2){ //vai comparando os numeros, como 2 e 3.
+    //    return num1 - num2; -> forma crescente, se quiser o contrario é só trocar os numeros.
+        return -1;  //NUMERO DOIS É MENOR, LOGO ELE VAI PRA FRENTE. Permanece o primeiro no local em que ele está e compara com o proximo;
+    }
+    else if(num1<num2){
+        return 1;  //joga o primeiro pra tras 
+    }
+    else {
+        return 0;
+    }
+} //o retorno aqui é só um numero dado para manter a ordem no momento em que o sort for associar, ele não importa além disso.
+
+function compararDoisNumerosReduzida(num1, num2) {
+    if(num1>num2){ //vai comparando os numeros, como 2 e 3.
+return num1 - num2; //-> forma crescente, se quiser o contrario é só trocar os numeros.
+}};
+
+
+const numerosOrdenados2 = numeros.sort(compararDoisNumeros);
+const numerosOrdenados3 = numeros.sort(compararDoisNumerosReduzida);
+
+console.log(numerosOrdenados2); // [54, 19, 6, 3, 2] -> ordem decrescente
+console.log(numerosOrdenados3); // [54, 19, 6, 3, 2] -> ordem decrescente
+
+//em um objeto:
+const pessoas = [
+    {
+        nome: "fulano",
+        idade: 49
+    },
+    {
+        nome: "fulano 2",
+        idade: 12
+    },
+    {
+        nome: "fulano3",
+        idade: 59
+    },
+    {
+        nome: "fulano3",
+        idade: 3
+    },
+];
+
+function compararDoisNumerosDescrita(num1, num2, ordem) {
+    if (ordem === "asc") {
+        return num1 - num2;
+    } else if (ordem === "desc"){
+        return num2 - num1;
+    };
+}
+
+const pessoasOrdenadas = pessoas.sort(value1, value2) {
+    compararDoisNumerosDescrita(value1.idade, value2.idade, "desc")}
+//TOSORTED
+//->SEMELHANTE AO SORT MAS CRIA UM NOVO ARRAY.
