@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div>
-        <input 
-        id="filter"
-        type="text"
-        class="inputFilter"
-        placeholder="Busque o usuario aqui">
-        <button id="search">Pesquisar</button>
-        <select name="sort" id="sort">
-            <option value="">Selecione Aqui</option>
-            <option value="">Maior para menor</option>
-            <option value="">Menor para maior</option>
-        </select>
-    </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input
+      id="filter"
+      type="text"
+      class="inputFilter"
+      placeholder="Busque o usuário aqui"
+    />
+    <select name="sort" id="sort">
+      <option selected value="">Selecione aqui</option>
+      <option value="desc">Maior para menor</option>
+      <option value="asc">Menor para maior</option>
+    </select>
+    <button id="btnFilter">Filtrar</button>
     <div class="forms-container">
-        <div class="form">
-            <input placeholder="Seu nome" id="userName" type="text">
-            <input placeholder="Seu e-mail" id="userEmail" type="text">
-            <input placeholder="Seu telefone" id="userPhone" type="text">
-            <button id="addItem" onclick="">adicionar</button>
-        </div>
-
-        <div class="form">
-            <input placeholder="Edite seu nome" id="editName" type="text">
-            <input placeholder="Edite seu e-mail" id="editEmail" type="text">
-            <input placeholder="Edite seu telefone" id="editPhone" type="text">
-            <button id="btnEdit">Confirmar</button>
-        </div>
+      <div class="form">
+        <input placeholder="Seu nome" id="userName" type="text" />
+        <input placeholder="Seu e-mail" id="userEmail" type="text" />
+        <input placeholder="Seu telefone" id="userPhone" type="text" />
+        <button id="addItem">Adicionar</button>
+      </div>
+      <div class="form">
+        <input placeholder="Edite seu nome" id="editName" type="text" />
+        <input placeholder="Edite seu e-mail" id="editEmail" type="text" />
+        <input placeholder="Edite seu telefone" id="editPhone" type="text" />
+        <button id="btnEdit">Confirmar</button>
+      </div>
     </div>
-
-    <div>
-        <ul id="lista">
-        </ul>
-    </div>
-
-    <script src="index.js"></script>
-</body>
+    <ul id="lista"></ul>
+    <script src="./index.js"></script>
+    <script src="./exemplos.js"></script>
+  </body>
 </html>
+
